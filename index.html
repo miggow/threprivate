@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Weareprivate</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <!-- Option 1: Include in HTML -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <!-- Thêm thư viện Masonry -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <style>
+        .navbar {
+            position: fixed;
+            top: -100px;
+            width: 100%;
+            transition: top 0.3s;
+        }
+
+        .show-navbar {
+            top: 0;
+        }
+
+        .banner {
+            position: relative;
+        }
+
+        .desktop-banner {
+            display: block;
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            background-size: cover;
+        }
+
+        .mobile-banner {
+            display: none;
+        }
+
+        @media (max-width: 767px) {
+            .desktop-banner {
+                display: none;
+            }
+
+            .mobile-banner {
+                display: block;
+                width: 100%;
+                height: 100vh;
+                object-fit: cover;
+                background-size: cover;
+            }
+        }
+
+        .photos {
+            /*   display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  grid-gap: 20px; */
+            column-count: 2;
+        }
+
+        .photos img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 5px;
+            filter: contrast(100%);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .photos img:hover {
+            filter: contrast(125%);
+        }
+    </style>
+
+</head>
+
+<body>
+    {{-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="d-flex justify-content-between mx-2 p-2">
+            <div>
+                <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample"
+                    aria-expanded="false" aria-controls="collapseWidthExample">
+                    <i class="bi bi-justify"></i>
+                </button>
+                <div style="min-height: 120px;" class="position-absolute">
+                    <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                        <div class="card card-body" style="width: 300px;">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li class="p-2">Home</li>
+                                <li class="p-2">Collections</li>
+                                <li class="p-2">Gallery</li>
+                                <br>
+                                <li class="p-2">Contact</li>
+                                <li class="p-2">Privacy</li>
+                                <li class="p-2">Help</li>
+                                <br>
+                                <li class="p-2">
+                                    <div class="d-inline-block ">
+                                        <a class="text-decoration-none text-dark" href="#">Login</a> / <a
+                                            href="#" class="text-decoration-none text-dark">Register</a>
+                                    </div>
+                                </li>
+                                <li class="p-2">Privacy</li>
+                                <li class="p-2">Help</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div><a class="text-decoration-none text-dark" href="/">wearetheprivate</a></div>
+            <div>Cart (0)</div>
+    </nav> --}}
+    <nav class="navbar d-flex justify-content-between p-4">
+        <a class=" text-decoration-none text-dark" href="/"><b>wearetheprivate</b></a>
+        <div>Cart (0)</div>
+    </nav>
+    <div class="banner">
+        <img class="desktop-banner" src="/assets/imgs/1671558751-hoooom.jpg" alt="Desktop Banner">
+        <img class="mobile-banner" src="/assets/imgs/1671557534-home2.jpg" alt="Mobile Banner">
+    </div>
+    <section class="photos container mt-3">
+        <img src="https://cms.wearetheprivate.com/images/galleries/2022/12/21/1671559006-sca.jpg" />
+        <img src="https://cms.wearetheprivate.com/images/home/2021/12/07/1638873324-16a00619134-Private0.jpg" />
+        <img src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558164-b.jpg" />
+        <img src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558411-bbb.jpg" />
+        <img src="https://cms.wearetheprivate.com/images/home/2022/01/18/1642442018-IMG_48s10-2.jpg" />
+        <img src="https://cms.wearetheprivate.com/images/home/2022/01/17/1642400169-instc-2022-01-17-131645.210.jpg" />
+        <img src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558104-a.jpg" />
+        <img src="https://cms.wearetheprivate.com/images/home/2022/01/17/1642401041-IMG_153ssssssss2.jpg" />
+        <img src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558611-vv.jpg" />
+        <img src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558120-e.jpg" />
+        <img src="https://cms.wearetheprivate.com/images/home/2022/01/17/1642400718-IMGss_1532.jpg" />
+    </section>
+    <section class="photos container mt-3">
+        <img src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558851-xx.jpg" />
+        <img src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558152-d.jpg" />
+        <img src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558164-b.jpg" />
+        <img src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558439-aa.jpg" />
+        <img src="https://cms.wearetheprivate.com/images/home/2022/01/18/1642442018-IMG_48s10-2.jpg" />
+        <img src="https://cms.wearetheprivate.com/images/home/2022/01/17/1642400169-instc-2022-01-17-131645.210.jpg" />
+        <img src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558104-a.jpg" />
+        <img src="https://cms.wearetheprivate.com/images/home/2022/01/17/1642401041-IMG_153ssssssss2.jpg" />
+        <img src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558611-vv.jpg" />
+        <img src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558120-e.jpg" />
+        <img src="https://cms.wearetheprivate.com/images/home/2022/01/17/1642400718-IMGss_1532.jpg" />
+    </section>
+
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            var navbar = document.querySelector('.navbar');
+
+            if (prevScrollpos > 0) {
+                navbar.classList.add('show-navbar');
+            } else {
+                navbar.classList.remove('show-navbar');
+            }
+
+            prevScrollpos = currentScrollPos;
+        };
+    </script>
+    <script>
+        // Khởi tạo Masonry khi tất cả các hình ảnh đã tải xong
+        var grid = document.querySelector('.grid');
+        var masonry;
+
+        imagesLoaded(grid, function() {
+            masonry = new Masonry(grid, {
+                itemSelector: '.grid-item',
+                columnWidth: '.grid-item',
+                percentPosition: true
+            });
+        });
+    </script>
+</body>
+<script src="/assets/js/bootstrap.min.js"></script>
+
+</html>
