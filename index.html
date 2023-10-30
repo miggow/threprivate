@@ -2,148 +2,371 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Weareprivate</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <!-- Option 1: Include in HTML -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <!-- Thêm thư viện Masonry -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <title></title>
     <style>
-        .navbar {
+        .notify {
+            height: 80px;
             position: fixed;
-            top: -100px;
-            width: 100%;
-            transition: top 0.3s;
+            top: 10%;
+            right: 20px;
+            width: 180px;
+            z-index: 10;
         }
 
-        .show-navbar {
-            top: 0;
-        }
-
-        .banner {
-            position: relative;
-        }
-
-        .desktop-banner {
-            display: block;
-            width: 100%;
-            height: 100vh;
-            object-fit: cover;
-            background-size: cover;
-        }
-
-        .mobile-banner {
-            display: none;
-        }
-
-        @media (max-width: 767px) {
-            .desktop-banner {
-                display: none;
-            }
-
-            .mobile-banner {
-                display: block;
-                width: 100%;
-                height: 100vh;
-                object-fit: cover;
-                background-size: cover;
-            }
-        }
-
-        .photos {
-            /*   display: grid;
-  grid-template-columns: repeat(3, 3fr);
-  grid-gap: 20px; */
-            column-count: 2;
-        }
-
-        .photos img {
-            width: 100%;
-            height: auto;
-            margin-bottom: 5px;
-            filter: contrast(100%);
-            transition: all 0.2s ease-in-out;
-        }
-
-        .photos img:hover {
-            filter: contrast(125%);
+        .bubble {
+            width: 180px;
+            height: 80px;
+            background: rgba(217, 217, 217, 0.31);
+            border: 1px solid #d9d9d9;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            padding: 10px;
+            font-size: 13px;
+            font-family: SFProDisplay-Light;
+            border-radius: 6px;
+            overflow: hidden;
         }
     </style>
-
 </head>
 
 <body>
-    
-    <nav class="navbar d-flex justify-content-between p-4">
-        <a class=" text-decoration-none text-dark" href="/"><b>wearetheprivate</b></a>
-        <div>Cart (0)</div>
-    </nav>
-    <div class="banner">
-        <img class="desktop-banner" src="https://cms.wearetheprivate.com/images/banners/2022/12/21/1671558751-hoooom.jpg" alt="Desktop Banner">
-        <img class="mobile-banner" src="https://cms.wearetheprivate.com/images/banners/2022/12/21/1671557534-home2.jpg" alt="Mobile Banner">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>T H E P R I V A T E</title>
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"><!--Import Google Icon Font-->
+        <link href="/fonts-googleapis-icon.css" rel="stylesheet"><!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="/materialize.css" media="screen,projection">
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link type="text/css" rel="stylesheet" href="/main.css">
+        <link type="text/css" rel="stylesheet" href="/all.css">
+        <link type="text/css" rel="stylesheet" href="/slick.css">
+        <link href="/select2.min.css" rel="stylesheet">
+
+        <script>
+            Number.prototype.numberFormat = function (decimals, dec_point, thousands_sep) {
+                dec_point = typeof dec_point !== 'undefined' ? dec_point : '.';
+                thousands_sep = typeof thousands_sep !== 'undefined' ? thousands_sep : ',';
+
+                var parts = this.toFixed(decimals).split('.');
+                parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, thousands_sep);
+
+                return parts.join(dec_point);
+            };
+        </script>
+    </head>
+    <div class="home-navigation">
+        <div id="mobile-menu-container" class="hide-on-med-and-up" data-delay="0">
+            <ul id="mobile-menu">
+                <li>
+                    <a href="/">HOME</a>
+                </li>
+                <li>
+                    <a class="has-sub-menu" href="javascript:void(0)">COLLECTIONS</a>
+                    <ul class="sub-menu"></ul>
+                </li>
+                <li>
+                    <a href="/gallery">GALLERY</a>
+                </li>
+                <li>
+                    <a href="/contact">CONTACT</a>
+                </li>
+                <li>
+                    <a href="/privacy">PRIVACY</a>
+                </li>
+                <li>
+                    <a href="/help">HELP</a>
+                </li>
+                <li class="">
+                    <a class="padding-right-reduce" href="/users/login">LOGIN</a> / <a class="padding-left-reduce"
+                        href="/users/register">REGISTER</a>
+                </li>
+                <li class="connect">
+                    <a class="has-sub-menu" href="javascript:void(0)">SUBSCRIBE</a>
+                    <ul class="sub-menu">
+                        <li class="subscribe">
+                            <form id="formSubscribeMobile" action="/subscribe/add" method="post"
+                                name="formSubscribeMobile">
+                                <input type="email" name="email" placeholder="Email"> <button type="submit"
+                                    class="btn submit">Gửi</button>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/about">ABOUT</a>
+                </li>
+            </ul>
+        </div>
+        <div id="__ca_delayed_view">
+            <div class="brand-name" data-delay="0">
+                <p><a href="/">wearetheprivate</a></p>
+            </div>
+            <div class="right-menu hide-on-small-only" data-delay="0">
+                <ul class="check-out-cart-menu">
+                    <li>
+                        <a href="/users/register">REGISTER</a>
+                    </li>
+                    <li class="divider">|</li>
+                    <li>
+                        <a href="/users/login">LOGIN</a>
+                    </li>
+                    <li id="cart">
+                        <a href="/orders/cart-details"><span class="static">CART</span> <span
+                                class="numbers">(0)</span></a>
+                    </li>
+                    <li id="pop_up__cart" class="hide-on-small-only">
+                        <div class="wrapper-cart">
+                            <p>Có sản phẩm vừa được thêm vào giỏ hàng</p><a href="/orders/cart-details"
+                                class="cart-view">XEM NGAY</a>
+                        </div>
+                    </li>
+                    <li id="pop_up__subscribe" class="hide-on-small-only">
+                        <div class="wrapper-cart">
+                            <p>Đăng ký nhận Email thành công.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu fixed-menu duplicated-menu hide-on-small-only" data-delay=".5">
+                <ul class="duplicated-menu-1">
+                    <li>
+                        <a href="/">HOME</a>
+                    </li>
+                    <li>
+                        <a class="has-sub-menu" href="javascript:void(0)">COLLECTIONS</a>
+                        <ul class="sub-menu"></ul>
+                    </li>
+                    <li>
+                        <a href="/gallery">GALLERY</a>
+                    </li>
+                    <li>
+                        <a href="/users/login">ACCOUNT</a>
+                    </li>
+                    <li>
+                        <a href="/help">HELP</a>
+                    </li>
+                    <li>
+                        <a href="/about">ABOUT</a>
+                    </li>
+                </ul>
+                <ul class="duplicated-menu-2">
+                    <li>
+                        <a href="/contact">CONTACT</a>
+                    </li>
+                    <li>
+                        <a href="/privacy">PRIVACY</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="social-connect hide-on-small-only" data-delay="1">
+                <ul>
+                    <li class="share">
+                        <a class="has-sub-menu" href="">SHARE</a>
+                        <ul class="sub-menu">
+                            <li class="social-icons">
+                                <a href="http://www.facebook.com/sharer/sharer.php?u=https://facebook.com/wearetheprivate&amp;t=W%20E%20A%20R%20E%20T%20H%20E%20P%20R%20I%20V%20A%20T%20E"
+                                    target="_blank" class="share-popup"></a> <a
+                                    href="https://www.instagram.com/wearetheprivate/" target="_blank"></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="connect">
+                        <a class="has-sub-menu" href="">CONNECT</a>
+                        <ul class="sub-menu">
+                            <li class="social-icons">
+                                <a href="https://facebook.com/wearetheprivate" target="_blank"></a> <a
+                                    href="https://www.instagram.com/wearetheprivate/" target="_blank"></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="connect">
+                        <a class="has-sub-menu" href="">SUBSCRIBE</a>
+                        <ul class="sub-menu">
+                            <li class="subscribe">
+                                <form id="formSubscribe" action="/subscribe/add" method="post" name="formSubscribe">
+                                    <input type="email" name="email" placeholder="Email">
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="__scroll" class="__scroll hide-on-small-only" data-delay="2">
+                <span>SCROLL</span>
+            </div><a id="icon-menu-mobile" href="javascript:void(0);" class="icon hide-on-med-and-up"
+                onclick="myFunction()">
+                <div id="hamburger" class="hamburger hamburger--slider">
+                    <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                    </div>
+                </div>
+            </a> <a id="cart" class="hide-on-med-and-up cart-mobile" href="/orders/cart-details"><span
+                    class="static">CART</span>
+                <span class="numbers">(0)</span></a>
+        </div>
+        <div id="pop_up__subscribe_mobile">
+            <p>Đăng ký nhận Email thành công.</p>
+        </div>
     </div>
-    <section class="photos container mt-3">
-        <img src="https://cms.wearetheprivate.com/images/galleries/2022/12/21/1671559006-sca.jpg" />
-        <img src="https://cms.wearetheprivate.com/images/home/2021/12/07/1638873324-16a00619134-Private0.jpg" />
-        <img src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558164-b.jpg" />
-        <img src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558411-bbb.jpg" />
-        <img src="https://cms.wearetheprivate.com/images/home/2022/01/18/1642442018-IMG_48s10-2.jpg" />
-        <img src="https://cms.wearetheprivate.com/images/home/2022/01/17/1642400169-instc-2022-01-17-131645.210.jpg" />
-        <img src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558104-a.jpg" />
-        <img src="https://cms.wearetheprivate.com/images/home/2022/01/17/1642401041-IMG_153ssssssss2.jpg" />
-        <img src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558611-vv.jpg" />
-        <img src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558120-e.jpg" />
-        <img src="https://cms.wearetheprivate.com/images/home/2022/01/17/1642400718-IMGss_1532.jpg" />
-    </section>
-    <section class="photos container mt-3">
-        <img src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558851-xx.jpg" />
-        <img src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558152-d.jpg" />
-        <img src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558164-b.jpg" />
-        <img src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558439-aa.jpg" />
-        <img src="https://cms.wearetheprivate.com/images/home/2022/01/18/1642442018-IMG_48s10-2.jpg" />
-        <img src="https://cms.wearetheprivate.com/images/home/2022/01/17/1642400169-instc-2022-01-17-131645.210.jpg" />
-        <img src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558104-a.jpg" />
-        <img src="https://cms.wearetheprivate.com/images/home/2022/01/17/1642401041-IMG_153ssssssss2.jpg" />
-        <img src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558611-vv.jpg" />
-        <img src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558120-e.jpg" />
-        <img src="https://cms.wearetheprivate.com/images/home/2022/01/17/1642400718-IMGss_1532.jpg" />
-    </section>
+    <div class="mainwrapper">
+        <section id="overlay">
+            <div id="js-main-banner" class="main_banner">
+                <div class="banner__bg hide-on-small-only"
+                    style="background: url(https://cms.wearetheprivate.com/images/banners/2022/12/21/1671558751-hoooom.jpg) center center no-repeat; background-size: cover;">
+                </div>
+                <div class="banner__bg hide-on-med-and-up"
+                    style="background: url(https://cms.wearetheprivate.com/images/banners/2022/12/21/1671557534-home2.jpg) center center no-repeat; background-size: cover;">
+                </div>
+                <div class="banner__scroll">
+                    <span>SCROLL</span>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </section>
+        <div class="center">
+            <section id="collection-highlight">
+                <div class="img-wrapper">
+                    <a href="/gallery/fallwinter-23-5"><img
+                            src="https://cms.wearetheprivate.com/images/galleries/2022/12/21/1671559006-sca.jpg"
+                            alt=""></a>
+                </div>
+            </section>
+            <section id="main-content">
+                <div class="container production home" data-delay="1.5">
+                    <div id="__auto_resize_images">
+                        <div class="img__wrap">
+                            <div class="gallery-image"><img
+                                    src="https://cms.wearetheprivate.com/images/home/2021/12/07/1638873324-16a00619134-Private0.jpg"
+                                    alt=""></div>
+                        </div>
+                        <div class="img__wrap">
+                            <div class="gallery-image"><img
+                                    src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558164-b.jpg"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div class="img__wrap">
+                            <div class="gallery-image"><img
+                                    src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558411-bbb.jpg"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div class="img__wrap">
+                            <div class="gallery-image"><img
+                                    src="https://cms.wearetheprivate.com/images/home/2022/01/18/1642442018-IMG_48s10-2.jpg"
+                                    alt=""></div>
+                        </div>
+                        <div class="img__wrap">
+                            <div class="gallery-image"><img
+                                    src="https://cms.wearetheprivate.com/images/home/2022/01/17/1642400169-instc-2022-01-17-131645.210.jpg"
+                                    alt="ACE"></div>
+                        </div>
+                        <div class="img__wrap">
+                            <div class="gallery-image"><img
+                                    src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558104-a.jpg"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div class="img__wrap">
+                            <div class="gallery-image"><img
+                                    src="https://cms.wearetheprivate.com/images/home/2022/01/17/1642401041-IMG_153ssssssss2.jpg"
+                                    alt="Newfrabic"></div>
+                        </div>
+                        <div class="img__wrap">
+                            <div class="gallery-image"><img
+                                    src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558611-vv.jpg"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div class="img__wrap">
+                            <div class="gallery-image"><img
+                                    src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558120-e.jpg"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div class="img__wrap">
+                            <div class="gallery-image"><img
+                                    src="https://cms.wearetheprivate.com/images/home/2022/01/17/1642400718-IMGss_1532.jpg"
+                                    alt=""></div>
+                        </div>
+                        <div class="img__wrap">
+                            <div class="gallery-image"><img
+                                    src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558265-f.jpg"
+                                    alt="Newfrabric"></div>
+                        </div>
+                        <div class="img__wrap">
+                            <div class="gallery-image"><img
+                                    src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558851-xx.jpg"
+                                    alt="1">
+                            </div>
+                        </div>
+                        <div class="img__wrap">
+                            <div class="gallery-image"><img
+                                    src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558152-d.jpg"
+                                    alt="ACE">
+                            </div>
+                        </div>
+                        <div class="img__wrap">
+                            <div class="gallery-image"><img
+                                    src="https://cms.wearetheprivate.com/images/home/2022/12/21/1671558439-aa.jpg"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
 
+        <!--===================================================-->
+        <section id="footer"></section>
+        <!--===================================================-->
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h2 class="center-align login-modal-title">LOGIN WITH</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 center-align">
+                            <button id="btn-login" class="btn waves-effect btn-social btn-ff"
+                                onlogin="checkLoginState();" onclick="fbLogin()">Facebook</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/lodash.js"></script>
+        <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="/materialize.min.js"></script>
+        <script type="text/javascript" src="/scripts.js"></script>
+        <script type="text/javascript" src="/ca__animations.js"></script>
+        <script type="text/javascript" src="/re_size_images.js"></script>
+        <script type="text/javascript" src="/slick.js"></script>
+        <script type="text/javascript" src="/ca__cart_check.js"></script>
+        <script src="/select2.min.js"></script>
+        <!-- END FOOTER -->
+    </div>
     <script>
-        var prevScrollpos = window.pageYOffset;
-        window.onscroll = function() {
-            var currentScrollPos = window.pageYOffset;
-            var navbar = document.querySelector('.navbar');
-
-            if (prevScrollpos > 0) {
-                navbar.classList.add('show-navbar');
-            } else {
-                navbar.classList.remove('show-navbar');
-            }
-
-            prevScrollpos = currentScrollPos;
-        };
-    </script>
-    <script>
-        // Khởi tạo Masonry khi tất cả các hình ảnh đã tải xong
-        var grid = document.querySelector('.grid');
-        var masonry;
-
-        imagesLoaded(grid, function() {
-            masonry = new Masonry(grid, {
-                itemSelector: '.grid-item',
-                columnWidth: '.grid-item',
-                percentPosition: true
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '423711265081903',
+                autoLogAppEvents: true,
+                xfbml: true,
+                version: 'v2.11'
             });
-        });
+        };
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
     </script>
 </body>
 
